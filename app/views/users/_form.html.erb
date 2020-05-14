@@ -1,0 +1,15 @@
+<%= form_with(model: @user, local: true) do |f| %>
+  <%= render partial: 'shared/error_messages', locals: { obj: @user } %>
+
+  <%= f.text_field :code, placeholder: "#{User.human_attribute_name :code }", class: "form-control user-form" %>
+
+  <%= f.text_field :name, placeholder: "#{User.human_attribute_name :name}", class: "form-control user-form" %>
+
+  <%= f.email_field :email, placeholder: "#{User.human_attribute_name :email}", class: "form-control user-form" %>
+
+  <%= f.password_field :password, placeholder: "#{User.human_attribute_name :password}", class: "form-control user-form" %>
+
+  <%= f.password_field :password_confirmation, placeholder: "#{User.human_attribute_name :password_confirmation}", class: "form-control user-form" %>
+
+  <%= f.submit "新規作成", class: "btn btn-default btn-block btn-signup" %>
+<% end %>
