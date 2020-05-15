@@ -3,8 +3,7 @@
     <%= link_to "簡易予定表", root_path, id: "logo" %>
     <nav>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><%= link_to "Top", '#', class: "nav-link" %></li>
-        <li class="nav-item"><%= link_to "Log in", '#', class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to current_user.name, user_path(current_user), class: "nav-link" if logged_in? %></li>
         <li calss="nav-item"><%= link_to "Log out", logout_path, method: :delete, class: "nav-link" %></li>
       </ul>
     </nav>
