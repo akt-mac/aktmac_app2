@@ -68,6 +68,17 @@ h1, h2 {
   background-color: #00634c;
 }
 
+/* トップページ */
+
+.login-top {
+  margin: auto;
+  margin-top: 100px;
+  text-align: center;
+  p {
+    text-align: left;
+  }
+}
+
 /* デバッグ */
 
 .debug_dump {
