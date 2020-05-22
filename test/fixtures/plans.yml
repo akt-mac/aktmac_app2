@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  planned_on: 2020-05-22
+  plan_1: 1
+  plan_2: 1
+  plan_3: 1
+  plan_4: 1
+  plan_5: 1
+  plan_6: 1
+  plan_7: 1
+  day_off: 1
+  note: MyString
+  user: one
+
+two:
+  planned_on: 2020-05-22
+  plan_1: 1
+  plan_2: 1
+  plan_3: 1
+  plan_4: 1
+  plan_5: 1
+  plan_6: 1
+  plan_7: 1
+  day_off: 1
+  note: MyString
+  user: two

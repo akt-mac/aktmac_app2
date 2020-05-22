@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_055912) do
+ActiveRecord::Schema.define(version: 2020_05_22_073645) do
+
+  create_table "plans", force: :cascade do |t|
+    t.date "planned_on"
+    t.integer "plan_1"
+    t.integer "plan_2"
+    t.integer "plan_3"
+    t.integer "plan_4"
+    t.integer "plan_5"
+    t.integer "plan_6"
+    t.integer "plan_7"
+    t.integer "day_off"
+    t.string "note"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_plans_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.integer "code", null: false
