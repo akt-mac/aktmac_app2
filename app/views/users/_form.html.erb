@@ -11,5 +11,5 @@
 
   <%= f.password_field :password_confirmation, placeholder: "#{User.human_attribute_name :password_confirmation}", class: "form-control user-form" %>
 
-  <%= f.submit "新規作成", class: "btn btn-default btn-block btn-signup" %>
+  <%= f.submit yield(:button_text), class: "btn btn-default btn-block btn-#{yield(:class_text)}" %>
 <% end %>

@@ -3,21 +3,21 @@
     <%= link_to "簡易予定表", root_path, id: "logo" %>
     <nav>
       <ul class="navbar-nav ml-auto">
+      <% if logged_in? %>
+      <li class="nav-item"><%= link_to current_user.name, user_path(current_user), class: "nav-link"%></li>
       <li class="dropdown nav-item">
         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
           設定 <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-          <li class="nav-item"><%= link_to "Show", current_user, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "Settings", edit_user_path(current_user), class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "ユーザー情報編集", edit_user_path(current_user), class: "nav-link" %></li>
           <li class="nav-item">
             <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link" %>
           </li>
           </ul>
         </li>
-        <li class="nav-item"><%= link_to current_user.name, user_path(current_user), class: "nav-link" if logged_in? %></li>
-        <li calss="nav-item"><%= link_to "Log out", logout_path, method: :delete, class: "nav-link" %></li>
       </ul>
+      <% end %>
     </nav>
   </div>
 </header>
