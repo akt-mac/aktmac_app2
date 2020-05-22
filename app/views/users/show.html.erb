@@ -1,7 +1,29 @@
 <% provide(:title, @user.name) %>
 
-<div class="container">
-  <%= @user.code %>
-  <%= @user.name %>
-  <%= @user.email %>
+<div class="btn-users-show">
+  <%= link_to "⇦ 前月へ", user_path(date: @first_day.prev_month), class: "btn btn-info" %>
+  <%= link_to "次月へ ⇨", user_path(date: @first_day.next_month), class: "btn btn-info" %>
+</div>
+
+<div>
+    <table class="table table-bordered table-condensed table-hover" id="table-plans">
+      <thead>
+        <tr>
+          <th><%= Plan.human_attribute_name :planned_on %></th>
+          <th></th>
+          <th></th>
+          <th><%= Plan.human_attribute_name :note %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @plans.each do |day| %>
+        <tr>
+          <td><%= l(day.planned_on, format: :short) %></td>
+          <td><%= $days_of_the_week[day.planned_on.wday] %></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
 </div>

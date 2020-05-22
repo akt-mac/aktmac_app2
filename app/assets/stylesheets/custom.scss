@@ -87,6 +87,19 @@ h1, h2 {
   }
 }
 
+/* ユーザー予定表 */
+
+#table-plans {
+  th {
+    vertical-align: middle;
+    text-align: center;
+  }
+  td {
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
 /* デバッグ */
 
 .debug_dump {

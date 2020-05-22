@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      plan: 予定
     attributes:
       user:
         code: ユーザーコード
@@ -9,3 +10,14 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード確認
+      plan:
+        planned_on: 日付
+        plan_1: 直行
+        plan_2: 展示会
+        plan_3: 会議
+        plan_4: 出張
+        plan_5: 代休
+        plan_6: 有給休暇
+        plan_7: その他
+        day_off: 定休
+        note: 備考
