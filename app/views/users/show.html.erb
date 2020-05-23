@@ -9,9 +9,9 @@
     <table class="table table-bordered table-condensed table-hover" id="table-plans">
       <thead>
         <tr>
-          <th><%= Plan.human_attribute_name :planned_on %></th>
-          <th></th>
-          <th></th>
+          <th width="50"><%= Plan.human_attribute_name :planned_on %></th>
+          <th width="50"></th>
+          <th width="100"></th>
           <th><%= Plan.human_attribute_name :note %></th>
         </tr>
       </thead>
@@ -20,7 +20,11 @@
         <tr>
           <td><%= l(day.planned_on, format: :short) %></td>
           <td><%= $days_of_the_week[day.planned_on.wday] %></td>
-          <td></td>
+          <td>
+            <% if Date.current == day.planned_on %>
+              <%= link_to "登録", edit_user_plan_path(@user, day), class: "btn btn-primary btn-attendance" %>
+            <% end %>
+          </td>
           <td></td>
         </tr>
       <% end %>

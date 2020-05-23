@@ -1,0 +1,36 @@
+<% provide(:title, "予定登録") %>
+
+<div class="row justify-content-md-center">
+  <div class="col col-md-6 col-md-offset-3">
+    <%= form_with(model: @plan, url: user_plan_path(@user, @plan), local: true, method: :patch) do |f| %>
+
+      <%= f.date_field :planned_on, placeholder: "#{Plan.human_attribute_name :code }", disabled: true, class: "form-control user-from" %>
+
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-light plan-check">
+          <%= f.check_box :plan_1, placeholder: "#{Plan.human_attribute_name :plan_1}" %>
+        <label>
+        <%= f.check_box :plan_2, placeholder: "#{Plan.human_attribute_name :plan_2}" %>
+        <%= f.check_box :plan_3, placeholder: "#{Plan.human_attribute_name :plan_3}" %>
+        <%= f.check_box :plan_4, placeholder: "#{Plan.human_attribute_name :plan_4}" %>
+        <%= f.check_box :plan_5, placeholder: "#{Plan.human_attribute_name :plan_5}" %>
+        <%= f.check_box :plan_6, placeholder: "#{Plan.human_attribute_name :plan_6}" %>
+        <%= f.check_box :plan_7, placeholder: "#{Plan.human_attribute_name :plan_7}" %>
+      </div>
+
+      <%= f.text_area :note, placeholder: "#{Plan.human_attribute_name :note}", class: "form-control" %>
+
+      <%= f.submit "登録", class: "btn btn-default btn-block" %>
+    <% end %>
+  </div>
+</div>
+
+<p>チェックボックスボタン化 例</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-primary active">
+    <input type="checkbox" autocomplete="off">CheckboxA
+  </label>
+  <label class="btn btn-primary">
+    <input type="checkbox" autocomplete="off">CheckboxB
+  </label>
+</div>
