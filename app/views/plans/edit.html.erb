@@ -7,7 +7,7 @@
       <%= f.date_field :planned_on, placeholder: "#{Plan.human_attribute_name :code }", disabled: true, class: "form-control user-from" %>
 
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-light plan-check">
+        <label class="btn btn-light">
           <%= f.check_box :plan_1, placeholder: "#{Plan.human_attribute_name :plan_1}" %>
         <label>
         <%= f.check_box :plan_2, placeholder: "#{Plan.human_attribute_name :plan_2}" %>
