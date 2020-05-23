@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'plans/new'
   root 'top_pages#top'
   get '/signup', to: 'users#new'
 
