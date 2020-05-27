@@ -41,8 +41,23 @@
       </div> -->
 
       <%= f.text_area :note, placeholder: "#{Plan.human_attribute_name :note}", class: "form-control" %>
-
+      <%= f.text_field :note, placeholder: "#{Plan.human_attribute_name :note}", class: "form-control", id: "output_message", disabled: true %>
       <%= f.submit "登録", class: "btn btn-default btn-block" %>
     <% end %>
   </div>
 </div>
+
+<form id="form1" action="#">
+  <input type="text" id="input_message" value="">
+  <input type="button" onclick="func1()" value="送信">
+</form>
+<%= text_field_tag(:output_message) %>
+<input type="text" id="output_message">
+<!-- <div id="output_message"></div> -->
+<script language="javascript" type="text/javascript">
+function func1() {
+  var input_message = document.getElementById("input_message").value;
+
+  document.getElementById("output_message").value = input_message;
+  }
+  </script>
