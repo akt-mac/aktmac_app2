@@ -7,57 +7,41 @@
       <%= f.date_field :planned_on, placeholder: "#{Plan.human_attribute_name :code }", disabled: true, class: "form-control user-from" %>
 
       <div class="btn-plan">
-        <%= f.check_box :plan_1, id: "plan_1_check", checked: "" %>
+        <%= f.check_box :plan_1, id: "plan_1_check" %>
           <label for="plan_1_check"><span></span></label>
       </div>
       <div class="btn-plan">
-        <%= f.check_box :plan_2, id: "plan_2_check", checked: "" %>
+        <%= f.check_box :plan_2, id: "plan_2_check" %>
           <label for="plan_2_check"><span></span></label>
       </div>
       <div class="btn-plan">
-        <%= f.check_box :plan_3, id: "plan_3_check", checked: "" %>
+        <%= f.check_box :plan_3, id: "plan_3_check" %>
           <label for="plan_3_check"><span></span></label>
       </div>
       <div class="btn-plan">
-        <%= f.check_box :plan_4, id: "plan_4_check", checked: "" %>
+        <%= f.check_box :plan_4, id: "plan_4_check" %>
           <label for="plan_4_check"><span></span></label>
       </div>
       <div class="btn-plan">
-        <%= f.check_box :plan_5, id: "plan_5_check", checked: "" %>
+        <%= f.check_box :plan_7, id: "plan_7_check" %>
+          <label for="plan_7_check"><span></span></label>
+      </div>
+      <div class="btn-plan">
+        <%= f.check_box :plan_5, id: "plan_5_check" %>
           <label for="plan_5_check"><span></span></label>
       </div>
       <div class="btn-plan">
-        <%= f.check_box :plan_6, id: "plan_6_check", checked: "" %>
+        <%= f.check_box :plan_6, id: "plan_6_check" %>
           <label for="plan_6_check"><span></span></label>
       </div>
-      <div class="btn-plan">
-        <%= f.check_box :plan_7, id: "plan_7_check", checked: "" %>
-          <label for="plan_7_check"><span></span></label>
-      </div>
+
       <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-light">
           <= f.check_box :plan_1, placeholder: "#{Plan.human_attribute_name :plan_1}" %>
         <label>
       </div> -->
-
-      <%= f.text_area :note, placeholder: "#{Plan.human_attribute_name :note}", class: "form-control" %>
-      <%= f.text_field :note, placeholder: "#{Plan.human_attribute_name :note}", class: "form-control", id: "output_message", disabled: true %>
-      <%= f.submit "登録", class: "btn btn-default btn-block" %>
+      <%= f.text_area :note, placeholder: "#{Plan.human_attribute_name :note}", rows: 8, class: "form-control" %>
+      <%= f.submit "登録", class: "btn btn-default btn-block btn-new-plan" %>
     <% end %>
   </div>
 </div>
-
-<form id="form1" action="#">
-  <input type="text" id="input_message" value="">
-  <input type="button" onclick="func1()" value="送信">
-</form>
-<%= text_field_tag(:output_message) %>
-<input type="text" id="output_message">
-<!-- <div id="output_message"></div> -->
-<script language="javascript" type="text/javascript">
-function func1() {
-  var input_message = document.getElementById("input_message").value;
-
-  document.getElementById("output_message").value = input_message;
-  }
-  </script>

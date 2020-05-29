@@ -25,7 +25,16 @@
               <%= link_to "登録", edit_user_plan_path(@user, day), class: "btn btn-primary btn-attendance" %>
             <% end %>
           </td>
-          <td></td>
+          <td>
+            <%= plan_1_text(day.plan_1) %>
+            <%= plan_2_text(day.plan_2) %>
+            <%= plan_3_text(day.plan_3) %>
+            <%= plan_4_text(day.plan_4) %>
+            <%= plan_5_text(day.plan_5) %>
+            <%= plan_6_text(day.plan_6) %>
+            <%= plan_7_text(day.plan_7) %>
+            <%= day.note %>
+          </td>
         </tr>
       <% end %>
       </tbody>

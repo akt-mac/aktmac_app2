@@ -1,6 +1,6 @@
 class PlansController < ApplicationController
   before_action :set_user_plans
-  before_action :set_plan, only: %i(edit)
+  before_action :set_plan, only: %i(edit update)
 
   def new
   end
@@ -9,11 +9,19 @@ class PlansController < ApplicationController
   end
 
   def update
-    flash[:info] = "テスト"
-    redirect_to user_url(current_user)
+    if @plan.update_attributes(plan_params)
+      flash[:info] = "予定を更新しました。"
+      redirect_to user_url(current_user)
+    else
+      render :edit
+    end
   end
 
   private
+
+  def plan_params
+    params.require(:plan).permit(:plan_1, :plan_2, :plan_3, :plan_4, :plan_5, :plan_6, :plan_7, :note, :user_id)
+  end
 
   def set_user_plans
     @user = User.find(params[:user_id])
