@@ -1,8 +1,8 @@
 <% provide(:title, @user.name) %>
 
 <div class="btn-users-show">
-  <%= link_to "⇦ 前月へ", user_path(date: @first_day.prev_month), class: "btn btn-info" %>
-  <%= link_to "次月へ ⇨", user_path(date: @first_day.next_month), class: "btn btn-info" %>
+  <%= link_to "⇦ 前月", user_path(date: @first_day.prev_month), class: "btn btn-sm btn-default" %>
+  <%= link_to "次月 ⇨", user_path(date: @first_day.next_month), class: "btn btn-sm btn-default" %>
 </div>
 
 <div>
@@ -11,30 +11,35 @@
         <tr>
           <th width="50"><%= Plan.human_attribute_name :planned_on %></th>
           <th width="50"></th>
-          <th width="100"></th>
+          <th width="50"></th>
+          <th></th>
           <th><%= Plan.human_attribute_name :note %></th>
         </tr>
       </thead>
       <tbody>
         <% @plans.each do |day| %>
-        <tr>
+          <% if day.planned_on == Date.current %>
+            <tr class="bg-today">
+          <% else %>
+            <tr>
+          <% end %>
           <td><%= l(day.planned_on, format: :short) %></td>
           <td><%= $days_of_the_week[day.planned_on.wday] %></td>
           <td>
             <% if Date.current == day.planned_on %>
-              <%= link_to "登録", edit_user_plan_path(@user, day), class: "btn btn-primary btn-attendance" %>
+              <%= link_to "", edit_user_plan_path(@user, day), class: "fas fa-edit" %>
             <% end %>
           </td>
           <td>
-            <%= plan_1_text(day.plan_1) %>
-            <%= plan_2_text(day.plan_2) %>
-            <%= plan_3_text(day.plan_3) %>
-            <%= plan_4_text(day.plan_4) %>
-            <%= plan_5_text(day.plan_5) %>
-            <%= plan_6_text(day.plan_6) %>
-            <%= plan_7_text(day.plan_7) %>
-            <%= day.note %>
+            <span class="badge badge-success"><%= plan_1_text(day.plan_1) %></span>
+            <span class="badge badge-success"><%= plan_2_text(day.plan_2) %></span>
+            <span class="badge badge-success"><%= plan_3_text(day.plan_3) %></span>
+            <span class="badge badge-success"><%= plan_4_text(day.plan_4) %></span>
+            <span class="badge badge-danger"><%= plan_5_text(day.plan_5) %></span>
+            <span class="badge badge-danger"><%= plan_6_text(day.plan_6) %></span>
+            <span class="badge badge-dark"><%= plan_7_text(day.plan_7) %></span>
           </td>
+          <td><%= truncate(day.note, length: 11) %></td>
         </tr>
       <% end %>
       </tbody>

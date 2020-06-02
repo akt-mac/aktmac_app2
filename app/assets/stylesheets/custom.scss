@@ -29,6 +29,23 @@ h1, h2 {
   color: #fff;
 }
 
+.badge {
+  font-size: 15px;
+  color: #fff;
+}
+
+.badge-success {
+  background-color: #78bd78;
+}
+
+.badge-danger {
+  background-color: #ef858c;
+}
+
+.badge-dark {
+  background-color: #595757;
+}
+
 .user-form {
   margin-bottom: 20px;
 }
@@ -98,6 +115,17 @@ h1, h2 {
     vertical-align: middle;
     text-align: center;
   }
+  span {
+    margin-bottom: 2px;
+  }
+}
+
+.bg-today {
+  background-color: #eed7a8;
+}
+
+.btn-users-show {
+  margin: 5px 0 5px 0;
 }
 
 /* 予定登録 */
