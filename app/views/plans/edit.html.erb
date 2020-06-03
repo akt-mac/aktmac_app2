@@ -23,6 +23,10 @@
           <label for="plan_4_check"><span></span></label>
       </div>
       <div class="btn-plan">
+        <%= f.check_box :plan_8, id: "plan_8_check" %>
+          <label for="plan_8_check"><span></span></label>
+      </div>
+      <div class="btn-plan">
         <%= f.check_box :plan_7, id: "plan_7_check" %>
           <label for="plan_7_check"><span></span></label>
       </div>
@@ -41,7 +45,7 @@
         <label>
       </div> -->
       <%= f.text_area :note, placeholder: "#{Plan.human_attribute_name :note}", rows: 8, class: "form-control" %>
-      <%= f.submit "登録", class: "btn btn-default btn-block btn-new-plan" %>
+      <%= f.submit "更新", class: "btn btn-default btn-block btn-new-plan" %>
     <% end %>
   </div>
 </div>

@@ -49,4 +49,10 @@ module ApplicationHelper
       "その他"
     end
   end
+
+  def plan_8_text(plan_i)
+    if plan_i == 1
+      "&nbsp;社&nbsp;内&nbsp;".html_safe
+    end
+  end
 end

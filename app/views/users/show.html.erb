@@ -27,10 +27,13 @@
           <td><%= $days_of_the_week[day.planned_on.wday] %></td>
           <td>
             <% if Date.current == day.planned_on %>
-              <%= link_to "", edit_user_plan_path(@user, day), class: "fas fa-edit" %>
+              <%= link_to "", edit_user_plan_path(@user, day), class: "fas fa-edit fa-lg", id: "edit_plan" %>
+            <% else %>
+              <%= link_to "", edit_user_plan_path(@user, day), class: "far fa-edit", id: "edit_plan" %>
             <% end %>
           </td>
           <td>
+            <span class="badge badge-success"><%= plan_8_text(day.plan_8) %></span>
             <span class="badge badge-success"><%= plan_1_text(day.plan_1) %></span>
             <span class="badge badge-success"><%= plan_2_text(day.plan_2) %></span>
             <span class="badge badge-success"><%= plan_3_text(day.plan_3) %></span>

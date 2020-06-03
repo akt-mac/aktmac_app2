@@ -20,7 +20,7 @@ class PlansController < ApplicationController
   private
 
   def plan_params
-    params.require(:plan).permit(:plan_1, :plan_2, :plan_3, :plan_4, :plan_5, :plan_6, :plan_7, :note, :user_id)
+    params.require(:plan).permit(:plan_1, :plan_2, :plan_3, :plan_4, :plan_5, :plan_6, :plan_7, :plan_8, :note, :user_id)
   end
 
   def set_user_plans

@@ -134,10 +134,14 @@ h1, h2 {
   margin-top: 10px;
 }
 
+#edit_plan {
+  text-decoration: none;
+}
+
 /* === ボタンを表示するエリア ============================== */
 .btn-plan {
   float: left;
-  margin: 10px 8px 0 0;                /* 中央寄せ */
+  margin: 10px 5px 0 0;                /* 中央寄せ */
   width: 60px;                /* ボタンの横幅 */
 }
 
@@ -268,7 +272,22 @@ box-shadow: none;
 }
 
 .btn-plan #plan_7_check:checked + label span:after {
-  content: "その他";                /* 表示する文字 */
+  content: "その他";
+  color: #fff;
+}
+
+.btn-plan #plan_8_check + label span:after {
+  content: "社内";
+  color: #fff;
+}
+
+.btn-plan #plan_8_check:checked + label {
+background: #78bd78;
+box-shadow: none;
+}
+
+.btn-plan #plan_8_check:checked + label span:after {
+  content: "社内";                /* 表示する文字 */
   color: #fff;                /* 文字色 */
 }
 
