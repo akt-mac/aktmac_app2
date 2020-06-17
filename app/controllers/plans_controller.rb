@@ -2,6 +2,11 @@ class PlansController < ApplicationController
   before_action :set_user_plans
   before_action :set_plan, only: %i(edit update)
 
+  def index
+    @plans = Plan.all.order(user_id: :asc)
+    flash[:danger] = ""
+  end
+
   def new
   end
 

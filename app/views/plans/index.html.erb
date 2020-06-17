@@ -1,0 +1,3 @@
+<% @plans.each do |p| %>
+  <p><%= "#{p.planned_on}" if p.planned_on == Date.current %><%= p.note if p.planned_on == Date.current %><%= "/#{p.user.name}" if p.planned_on == Date.current %></p>
+<% end %>
